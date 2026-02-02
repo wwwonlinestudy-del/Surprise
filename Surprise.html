@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Question for Akanksha</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0e0e1a;
+            color: #00ffcc;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            overflow: hidden; /* Hide overflow for animations */
+        }
+        .container {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+            max-width: 90%;
+        }
+        h1, p {
+            animation: fadeIn 2s forwards;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+            margin-bottom: 20px;
+            animation: zoomIn 1.5s forwards;
+        }
+        .buttons button {
+            background-color: #00ffcc;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        }
+        .buttons button:hover {
+            transform: scale(1.1);
+            background-color: #00e6b8;
+        }
+        #noBtn {
+            position: absolute; /* Make the 'No' button run away */
+            transition: all 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello Akanksha!</h1>
+        <p>A little something special for the most wonderful person I know.</p>
+        
+        <div class="image-container">
+            <!-- REPLACE 'your_image_name.jpg' with the actual filename of the image you upload -->
+            <img src="your_image_name.jpg" alt="Akanksha's picture">
+        </div>
+
+        <h2>Will you dance through life with me?</h2>
+
+        <div class="buttons">
+            <button onclick="handleYes()">Yes!</button>
+            <button id="noBtn" onmouseover="handleNoHover()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function handleYes() {
+            alert("Woohoo! Best decision ever! Let's dance! 🎉❤️");
+            // You could redirect to another page or show a celebration animation here
+        }
+
+        function handleNoHover() {
+            const noBtn = document.getElementById('noBtn');
+            // Move the button randomly around the screen
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
